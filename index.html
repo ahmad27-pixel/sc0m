@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Happy Birthday Talha 🎂</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap">
+<style>
+/* sab se pehle colors, bas 4-5 hi rakhe hain */
+:root{color-scheme:dark;--bg:#140c2e;--hi:#20154a;--lo:#0a0618;--face:#1f1545;--ink:#1a1033;--yellow:#ffe14d;--pink:#ff5fa2;--white:#ffffff}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);background-image:radial-gradient(rgba(255,255,255,0.05) 1.5px,transparent 1.7px);background-size:26px 26px;color:var(--white);font-family:"Comic Sans MS","Chalkboard SE","Comic Neue",cursive}
+button,input{font-family:inherit}
+
+/* slides ka track, bas side me khisakta hai */
+.track{position:fixed;top:0;left:0;height:100%;display:flex;width:700vw;transition:transform .4s ease}
+.slide{width:100vw;height:100%;display:flex;align-items:center;justify-content:center;padding:46px 14px 90px}
+
+/* border thoda teda rakha hai jaan booch kar */
+.card{width:100%;max-width:470px;max-height:100%;overflow-y:auto;text-align:center;padding:24px 20px;border:1px solid rgba(255,255,255,0.28);border-radius:22px 28px 20px 30px;background:rgba(255,255,255,0.07);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 12px 36px rgba(10,5,30,0.45),inset 0 1px 0 rgba(255,255,255,0.35)}
+.slide:nth-child(odd) .card{transform:rotate(-1deg)}
+.slide:nth-child(even) .card{transform:rotate(1deg)}
+
+h1{font-family:"Poetsen One","Comic Sans MS",cursive;font-size:52px;line-height:1.1;margin:8px 0;color:var(--yellow);font-weight:400}
+h2{font-family:"Poetsen One","Comic Sans MS",cursive;font-size:30px;margin:8px 0;color:var(--yellow);font-weight:400}
+h3{font-size:16px;margin:14px 0 4px}
+.name{font-size:28px;font-weight:bold;margin:8px 0}
+.tag{font-size:13px;color:var(--yellow);margin-bottom:6px}
+p{line-height:1.6;font-size:16px;margin:10px 0}
+.big{width:110px;height:110px;line-height:110px;border-radius:50%;font-size:56px;display:inline-block;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 10px 20px rgba(0,0,0,0.35),inset 0 6px 10px rgba(255,255,255,0.35),inset 0 -8px 12px rgba(0,0,0,0.25)}
+.letter{font-size:16px;line-height:28px;text-align:left;color:#3b2a1a;background:repeating-linear-gradient(transparent 0 27px,rgba(90,140,200,0.35) 27px 28px),#fff6dd;background-origin:content-box;border-radius:4px;padding:6px 16px;margin:12px 0;box-shadow:0 8px 16px rgba(0,0,0,0.45),inset 0 1px 0 #fff;transform:rotate(-1deg)}
+.letter b{color:#c2185b}
+
+/* button: hover pe halka sa ghooma, click pe dab jata hai */
+.btn{border:1px solid rgba(0,0,0,0.25);border-radius:16px;padding:12px 22px;margin:10px 4px 8px;color:var(--white);text-shadow:0 1px 1px rgba(0,0,0,0.45);background:linear-gradient(#ff8cbf,#ff5fa2 55%,#e8408a);box-shadow:0 5px 0 #a82a63,0 9px 14px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.55);font-size:16px;font-weight:bold;cursor:pointer}
+.btn:hover{transform:rotate(-2deg)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #a82a63,0 3px 6px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.4)}
+.btn:disabled{opacity:0.4}
+a.btn{display:inline-block;text-decoration:none}
+.btn.green{background:linear-gradient(#5bf08f,#25d366 55%,#17a84d);color:var(--ink);text-shadow:0 1px 0 rgba(255,255,255,0.4);box-shadow:0 5px 0 #0e7a35,0 9px 14px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.6)}
+.btn.green:active{transform:translateY(4px);box-shadow:0 1px 0 #0e7a35,0 3px 6px rgba(0,0,0,0.4)}
+.btn.alt{background:linear-gradient(#a58cff,#7c5cff 55%,#5a3ad6);box-shadow:0 5px 0 #4a30b8,0 9px 14px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.5)}
+.btn.alt:active,#no:active{transform:translateY(4px);box-shadow:0 1px 0 #4a30b8,0 3px 6px rgba(0,0,0,0.4)}
+
+.choices{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:8px 0}
+.choices .choice{font-size:13px;padding:8px 2px}
+.choice{border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.12);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--white);border-radius:14px;padding:9px 4px;cursor:pointer;font-size:15px;box-shadow:0 3px 0 rgba(0,0,0,0.25),0 6px 10px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.4)}
+.choice span{display:block;font-size:24px}
+.choice:hover{transform:rotate(-2deg)}
+.choice:active{transform:scale(0.95)}
+.choice.on{background:rgba(255,225,77,0.92);color:var(--ink);font-weight:bold;transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,0.3),inset 0 2px 4px rgba(0,0,0,0.25)}
+input[type=time]{padding:9px 12px;color:var(--white);background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:12px;font-size:16px;box-shadow:inset 0 3px 7px rgba(0,0,0,0.55),0 1px 0 rgba(255,255,255,0.3)}
+.msg{color:var(--yellow);font-weight:bold;line-height:1.5;min-height:22px;margin-top:8px}
+
+/* Send ke saath No ki jagah (asli No body me alag se bhagta hai) */
+.treatrow{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+#spot{width:84px;height:42px}
+#no{position:fixed;z-index:30;margin:0;background:linear-gradient(#a58cff,#7c5cff 55%,#5a3ad6);box-shadow:0 5px 0 #4a30b8,0 9px 14px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.5);color:var(--white);transition:left .12s,top .12s}
+
+/* candles, simple CSS se */
+.cake{width:170px;margin:22px auto 8px}
+.candles{display:flex;justify-content:space-around;padding:0 14px}
+.candle{position:relative;width:9px;height:34px;background:var(--yellow);border-radius:3px;box-shadow:inset -2px 0 2px rgba(0,0,0,0.25),inset 2px 0 2px rgba(255,255,255,0.5)}
+.candle:nth-child(even){background:#5ff0ff}
+.candle::before{content:"";position:absolute;left:-1px;top:-17px;width:11px;height:17px;background:#ffb02e;border-radius:50% 50% 50% 50% / 65% 65% 35% 35%;box-shadow:0 0 10px 3px rgba(255,176,46,0.6);animation:flick .35s infinite alternate}
+@keyframes flick{to{transform:scale(0.9,1.12) rotate(4deg)}}
+.out .candle::before{display:none}
+.base{height:64px;border-radius:12px 12px 6px 6px;background:#8a4a2a;border-top:22px solid #ff9ecb;box-shadow:inset 0 6px 8px rgba(255,255,255,0.25),inset 0 -8px 10px rgba(0,0,0,0.3),0 10px 14px rgba(0,0,0,0.4)}
+.cake::after{content:"";display:block;height:10px;margin:-2px -14px 0;border-radius:50%;background:#e8e8f0;box-shadow:0 6px 10px rgba(0,0,0,0.4),inset 0 -2px 3px rgba(0,0,0,0.25)}
+
+nav{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 12px calc(14px + env(safe-area-inset-bottom,0px))}
+.navbtn{width:46px;height:46px;border:1px solid #9a7a10;border-radius:50%;background:linear-gradient(#fff3a6,#ffe14d 50%,#d9ab1c);color:var(--ink);font-size:24px;font-weight:bold;cursor:pointer;box-shadow:0 4px 0 #8a6a0c,0 7px 10px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.7)}
+.navbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #8a6a0c,0 2px 4px rgba(0,0,0,0.4)}
+.navbtn:disabled{opacity:0.2}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(0,0,0,0.35);box-shadow:inset 0 1px 2px rgba(0,0,0,0.6),0 1px 0 rgba(255,255,255,0.25)}
+.dots i.on{background:var(--yellow);box-shadow:0 0 8px 2px rgba(255,225,77,0.8)}
+#music{position:fixed;right:12px;top:calc(12px + env(safe-area-inset-top,0px));z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid #9a7a10;background:linear-gradient(#fff3a6,#ffe14d 50%,#d9ab1c);color:var(--ink);font-size:18px;cursor:pointer;box-shadow:0 3px 0 #8a6a0c,0 6px 9px rgba(0,0,0,0.4),inset 0 2px 1px rgba(255,255,255,0.7)}
+.conf{position:fixed;top:-24px;z-index:20;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+/* glass ke peeche rangeen gole, taaki frosted effect dikhe */
+.blob{position:fixed;border-radius:50%;filter:blur(50px);opacity:0.32}
+.b1{width:260px;height:260px;background:#ff5fa2;left:-70px;top:60px}
+.b2{width:300px;height:300px;background:#5ff0ff;right:-90px;bottom:90px;opacity:0.22}
+.b3{width:190px;height:190px;background:#ffe14d;right:10%;top:18%;opacity:0.16}
+.b4{width:240px;height:240px;background:#7c5cff;left:25%;bottom:-60px}
+h1,h2{text-shadow:0 2px 0 rgba(0,0,0,0.35)}
+/* jhandiyan upar, party wali feel ke liye */
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:36px;z-index:1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='34'%3E%3Cpath d='M0 3 Q80 12 160 3' stroke='%23ffffff55' fill='none'/%3E%3Cpath d='M4 5 L34 7 L19 30Z' fill='%23ff5fa2'/%3E%3Cpath d='M44 7 L74 8 L59 31Z' fill='%23ffe14d'/%3E%3Cpath d='M84 8 L114 8 L99 31Z' fill='%235ff0ff'/%3E%3Cpath d='M124 8 L154 7 L139 30Z' fill='%237c5cff'/%3E%3C/svg%3E") repeat-x}
+[hidden]{display:none!important}
+@media(max-height:720px){.slide{padding-bottom:76px}.card{padding:14px}.big{width:84px;height:84px;line-height:84px;font-size:42px}.choice span{font-size:20px}h1{font-size:44px}}
+
+
+/* Refined glassmorphism finish */
+:root{--bg:#090d20;--hi:#17264b;--lo:#070a16;--face:rgba(255,255,255,.09);--ink:#10152b;--yellow:#ffe6a6;--pink:#ff79bd;--white:#f8f7ff}
+html,body{background-color:#090d20;background-image:radial-gradient(circle at 18% 18%,rgba(110,93,255,.18),transparent 34%),radial-gradient(circle at 85% 75%,rgba(54,211,255,.14),transparent 32%),radial-gradient(rgba(255,255,255,.035) 1px,transparent 1.5px);background-size:auto,auto,24px 24px}
+.card{border:1px solid rgba(255,255,255,.22);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.045));backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);box-shadow:0 24px 70px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.25);transform:none!important}
+.slide:nth-child(odd) .card,.slide:nth-child(even) .card{transform:none}
+h1,h2{letter-spacing:.2px;text-shadow:0 3px 22px rgba(255,225,166,.12)}
+.big{background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.055));border:1px solid rgba(255,255,255,.28);box-shadow:0 14px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn{border:1px solid rgba(255,255,255,.28);border-radius:14px;background:linear-gradient(135deg,rgba(255,121,189,.95),rgba(209,74,153,.88));box-shadow:0 8px 22px rgba(255,95,162,.18),inset 0 1px 0 rgba(255,255,255,.4);text-shadow:none;transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 12px 28px rgba(255,95,162,.24)}
+.btn:active{transform:translateY(1px);box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.btn.green{background:linear-gradient(135deg,rgba(83,232,163,.95),rgba(29,177,125,.9));box-shadow:0 8px 22px rgba(29,211,153,.17),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn.alt,#no{background:linear-gradient(135deg,rgba(164,143,255,.96),rgba(104,81,224,.92));box-shadow:0 8px 22px rgba(124,92,255,.2),inset 0 1px 0 rgba(255,255,255,.4)}
+.choice{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.075);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:background .2s ease,transform .2s ease,border-color .2s ease}
+.choice:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.4)}
+.choice.on{background:rgba(255,230,166,.92);border-color:rgba(255,230,166,.9);color:#17132b;box-shadow:0 5px 18px rgba(255,230,166,.15)}
+input[type=time]{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 8px rgba(0,0,0,.12)}
+.letter{border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.2);transform:none}
+nav{padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.navbtn,#music{border:1px solid rgba(255,255,255,.28);background:rgba(255,230,166,.88);box-shadow:0 8px 22px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.55)}
+.dots i{background:rgba(255,255,255,.25);box-shadow:none}.dots i.on{background:var(--yellow);box-shadow:0 0 12px rgba(255,230,166,.55)}
+.blob{opacity:.42;filter:blur(70px)}
+@media(max-width:520px){.slide{padding:54px 12px 82px}.card{padding:22px 17px;border-radius:24px}h1{font-size:clamp(38px,11vw,52px)}h2{font-size:clamp(25px,7vw,30px)}.name{font-size:25px}.choices{gap:7px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+
+/* Hybrid design: keep the original skeuomorphic, tactile controls and blend them with glassmorphism */
+.btn{
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:15px;
+  background:linear-gradient(180deg,rgba(255,190,220,.98) 0%,rgba(255,105,174,.96) 48%,rgba(205, fifty, 132, .96) 100%);
+  background:linear-gradient(180deg,#ffb5d7 0%,#ff72b1 48%,#d9418b 100%);
+  box-shadow:0 5px 0 #a82a63,0 10px 20px rgba(0,0,0,.28),inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 5px rgba(120,20,70,.18);
+  text-shadow:0 1px 1px rgba(90,20,55,.35);
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 7px 0 #a82a63,0 13px 24px rgba(255,95,162,.2),inset 0 2px 0 rgba(255,255,255,.72)}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #a82a63,0 4px 8px rgba(0,0,0,.25),inset 0 2px 5px rgba(80,10,45,.2)}
+.btn.green{background:linear-gradient(180deg,#a4ffd0 0%,#45e69b 50%,#16a765 100%);color:#073b2a;box-shadow:0 5px 0 #0e7a35,0 10px 20px rgba(0,0,0,.25),inset 0 2px 0 rgba(255,255,255,.75),inset 0 -3px 5px rgba(0,80,40,.16);text-shadow:0 1px rgba(255,255,255,.4)}
+.btn.green:active{box-shadow:0 2px 0 #0e7a35,inset 0 2px 5px rgba(0,80,40,.2)}
+.btn.alt,#no{background:linear-gradient(180deg,#c6b8ff 0%,#9178ff 48%,#6146d5 100%);box-shadow:0 5px 0 #4330a5,0 10px 20px rgba(0,0,0,.28),inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 5px rgba(40,20,110,.22)}
+.btn.alt:active,#no:active{box-shadow:0 2px 0 #4330a5,inset 0 2px 5px rgba(40,20,110,.2)}
+.choice{border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.055));box-shadow:0 4px 0 rgba(0,0,0,.22),0 9px 18px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.12)}
+.choice:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 0 rgba(0,0,0,.22),inset 0 2px 5px rgba(0,0,0,.18)}
+.choice.on{background:linear-gradient(180deg,#fff1bc,#ffe6a6 58%,#e8c66d);border-color:rgba(255,255,255,.7);box-shadow:0 3px 0 #b8943e,0 8px 16px rgba(255,220,120,.14),inset 0 2px 0 rgba(255,255,255,.8),inset 0 -2px 4px rgba(130,90,20,.15)}
+.navbtn,#music{background:linear-gradient(180deg,#fff8d6 0%,#ffe8a0 48%,#d8b94f 100%);border:1px solid rgba(255,255,255,.65);box-shadow:0 4px 0 #8f762b,0 8px 16px rgba(0,0,0,.25),inset 0 2px 0 rgba(255,255,255,.9),inset 0 -3px 5px rgba(100,70,10,.15)}
+.navbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #8f762b,inset 0 2px 5px rgba(100,70,10,.18)}
+#music{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.055));border:1px solid rgba(255,255,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06)}
+.big{background:linear-gradient(145deg,rgba(255,255,255,.26),rgba(255,255,255,.07));box-shadow:0 12px 25px rgba(0,0,0,.25),inset 0 3px 5px rgba(255,255,255,.42),inset 0 -5px 9px rgba(0,0,0,.17)}
+.letter{background:repeating-linear-gradient(transparent 0 27px,rgba(90,140,200,.28) 27px 28px),linear-gradient(145deg,#fffdf1,#f5e6c7);border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 26px rgba(0,0,0,.28),inset 0 2px 0 rgba(255,255,255,.95),inset 0 -2px 5px rgba(100,65,20,.08)}
+.base{background:linear-gradient(90deg,#6e351f,#a85f39 22%,#8a4a2a 70%,#63301d);border-top-color:#ffacd0;box-shadow:inset 0 5px 8px rgba(255,255,255,.32),inset 0 -8px 10px rgba(0,0,0,.3),0 10px 14px rgba(0,0,0,.4)}
+
+
+
+/* First-slide recipient name: noticeable, elegant, not oversized */
+.slide:first-child .name{
+  display:table;
+  position:relative;
+  margin:14px auto 12px;
+  padding:8px 22px 10px;
+  font-family:"Poetsen One","Comic Sans MS",cursive;
+  font-size:clamp(31px,7.5vw,37px);
+  line-height:1.15;
+  letter-spacing:.7px;
+  color:#fff8fd;
+  background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.055));
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:16px;
+  -webkit-backdrop-filter:blur(16px) saturate(145%);
+  backdrop-filter:blur(16px) saturate(145%);
+  text-shadow:0 2px 0 rgba(74,26,91,.45),0 0 16px rgba(255,121,189,.32);
+  box-shadow:0 5px 0 rgba(62,36,104,.5),0 10px 22px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.42),inset 0 -3px 7px rgba(255,121,189,.09);
+}
+.slide:first-child .name::after{
+  content:"";
+  display:block;
+  height:2px;
+  width:42%;
+  margin:7px auto 0;
+  border-radius:99px;
+  background:linear-gradient(90deg,transparent,#ffe6a6,rgba(255,121,189,.9),transparent);
+  opacity:.9;
+}
+@media(max-height:720px){.slide:first-child .name{font-size:clamp(28px,6vw,33px);padding:6px 18px 8px;margin:9px auto}}
+
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+<button id="music" onclick="toggleMusic()">🔇</button>
+<button class="btn" id="no" onclick="noClicked()" hidden>No 😈</button>
+
+<div class="track" id="track">
+
+<!-- Slide 1: shuru -->
+<section class="slide"><div class="card">
+<div class="tag">psst, a surprise for you</div><div class="big">🎂</div>
+<h1>Happy<br>Birthday!</h1><div class="name">Talha</div>
+<p>Made this card myself, so be nice. Open it. And get ready, a treat request is coming 😄</p>
+<button class="btn" onclick="goTo(1);burst(60)">🎁 Open it</button>
+</div></section>
+
+<!-- Slide 2: wishes, chhoti si -->
+<section class="slide"><div class="card">
+<h2>Happy Birthday Talha!</h2>
+<p>Next year should be a blockbuster for you. May Allah give you health, happiness and loads of success. 🤲</p>
+<p>And yes, the treat is still pending.</p>
+<button class="btn" onclick="goTo(2)">Next ➜</button>
+</div></section>
+
+<!-- Slide 3: rocket -->
+<section class="slide"><div class="card">
+<h2>Blast Off!</h2>
+<p>Ready to launch another year?</p>
+<div class="big" id="rocket">🚀</div><div class="msg" id="rmsg"></div>
+<button class="btn" id="launch" onclick="launchRocket()">Launch 🔥</button>
+<button class="btn" id="n2" onclick="goTo(3)" hidden>Next ➜</button>
+</div></section>
+
+<!-- Slide 4: treat wali slide, yahan No bhagta hai -->
+<section class="slide"><div class="card">
+<h2>🍕 Treat Time!</h2>
+<p>Birthday boy, time to pay up. Pick the food, the place and the time.</p>
+<h3>What are we eating? (pick as many as you like)</h3>
+<div class="choices" id="foods">
+<button class="choice" data-v="Pizza" onclick="this.classList.toggle('on')"><span>🍕</span>Pizza</button>
+<button class="choice" data-v="Burger" onclick="this.classList.toggle('on')"><span>🍔</span>Burger</button>
+<button class="choice" data-v="Ice Cream" onclick="this.classList.toggle('on')"><span>🍦</span>Ice Cream</button>
+<button class="choice" data-v="Cake" onclick="this.classList.toggle('on')"><span>🍰</span>Cake</button>
+<button class="choice" data-v="Fries" onclick="this.classList.toggle('on')"><span>🍟</span>Fries</button>
+<button class="choice" data-v="Broast" onclick="this.classList.toggle('on')"><span>🍗</span>Broast</button>
+</div>
+<h3>Where?</h3>
+<div class="choices" id="places">
+<button class="choice" data-v="Cravings" onclick="pickPlace(this)"><span>🍽️</span>Cravings</button>
+<button class="choice" data-v="HFC" onclick="pickPlace(this)"><span>🍗</span>HFC</button>
+<button class="choice" data-v="Royal Chicken" onclick="pickPlace(this)"><span>🍗</span>Royal Chicken</button>
+</div>
+<h3>What time?</h3>
+<input type="time" id="time" value="20:00">
+<div class="treatrow"><button class="btn" id="send" onclick="sendTreat()">Send request 💌</button><div id="spot"></div></div>
+<div class="msg" id="tmsg"></div>
+<button class="btn" id="n3" onclick="goTo(4)" hidden>Next ➜</button>
+</div></section>
+
+<!-- Slide 5: candles -->
+<section class="slide"><div class="card">
+<h2>🕯️ Make a Wish</h2>
+<p>Close your eyes, wish for something big, then blow them out.</p>
+<div class="cake" id="cake"><div class="candles"><i class="candle"></i><i class="candle"></i><i class="candle"></i><i class="candle"></i><i class="candle"></i></div><div class="base"></div></div>
+<div class="msg" id="cmsg"></div>
+<button class="btn" id="blow" onclick="blowCandles()">Blow 💨</button>
+<button class="btn" id="n4" onclick="goTo(5)" hidden>Next ➜</button>
+</div></section>
+
+<!-- Slide 6: letter -->
+<section class="slide"><div class="card">
+<h2>Dear Talha</h2>
+<div class="letter">Happy Birthday bro! 🎂<br>Another year older, still not wiser 😂 Stay the same, stay awesome. May all your plans actually work out this year.<br>Now go enjoy your day. And remember, the treat!<br><br>Your friend,<br><b>Muhammad Ahmad</b></div>
+<button class="btn" onclick="goTo(6)">Next ➜</button>
+</div></section>
+
+<!-- Slide 7: aakhri -->
+<section class="slide"><div class="card">
+<h1>Say Thanks!</h1><div class="name">From Muhammad Ahmad</div>
+<p>Drop me a thank-you on WhatsApp and we will lock the treat plan.</p>
+<a class="btn green" target="_blank" rel="noopener" href="https://wa.me/923290887127" onclick="sendWhatsapp(this)">Thank me on WhatsApp 💚</a><br>
+<button class="btn alt" onclick="showSlide(0)">🔁 Watch again</button>
+</div></section>
+</div>
+
+<nav><button class="navbtn" id="prev" onclick="showSlide(cur-1)">‹</button><div class="dots" id="dots"></div><button class="navbtn" id="next" onclick="showSlide(cur+1)">›</button></nav>
+
+<script>
+// globals, seedha seedha. koi fancy structure nahi
+var cur = 0;
+var reach = 0;      // kitni slide tak jaa sakte hain
+var total = 7;
+var sent = false;
+var el = function (id) { return document.getElementById(id); };
+
+for (var k = 0; k < total; k++) { el('dots').appendChild(document.createElement('i')); }
+
+function showSlide(i) {
+  if (i < 0 || i > reach || i >= total) return;
+  cur = i;
+  el('track').style.transform = 'translateX(-' + (i * 100) + 'vw)';
+  for (var j = 0; j < total; j++) el('dots').children[j].className = (j === i) ? 'on' : '';
+  el('prev').disabled = (i === 0);
+  el('next').disabled = (i >= reach || i === total - 1);
+  // No sirf treat slide pe dikhana hai
+  if (i === 3 && !sent) { noMoved = false; setTimeout(placeNo, 450); } else { el('no').hidden = true; }
+}
+function goTo(i) { if (i > reach) reach = i; showSlide(i); }
+showSlide(0);
+
+document.onkeydown = function (e) {
+  if (e.key === 'ArrowRight') showSlide(cur + 1);
+  if (e.key === 'ArrowLeft') showSlide(cur - 1);
+};
+var sx = 0, sy = 0;
+document.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+document.addEventListener('touchend', function (e) {
+  var t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+  if (Math.abs(dx) > 80 && Math.abs(dx) > Math.abs(dy) * 1.5) showSlide(cur + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+// confetti, bas thoda sa
+function burst(n) {
+  var cols = ['#ffe14d', '#ff5fa2', '#5ff0ff', '#ffffff'];
+  for (var i = 0; i < n; i++) {
+    var d = document.createElement('div');
+    d.className = 'conf';
+    if (i % 3 === 0) { d.textContent = ['🎉', '✨', '🎈'][i % 3 + (i % 2)] || '🎉'; d.style.fontSize = '20px'; }
+    else { d.style.width = '8px'; d.style.height = '12px'; d.style.background = cols[i % 4]; }
+    d.style.left = Math.random() * 100 + 'vw';
+    d.style.animationDuration = (1.6 + Math.random() * 1.6) + 's';
+    document.body.appendChild(d);
+    setTimeout(function (x) { x.remove(); }, 3500, d);
+  }
+}
+
+function launchRocket() {
+  var b = el('launch');
+  b.disabled = true;
+  el('rmsg').textContent = '3… 2… 1… Liftoff! 🚀';
+  // rocket card ke andar clip ho jata tha, isliye alag fixed copy udati hai poori screen pe
+  var r0 = el('rocket').getBoundingClientRect();
+  var fly = document.createElement('div');
+  fly.textContent = '🚀';
+  fly.style.cssText = 'position:fixed;z-index:40;pointer-events:none;font-size:56px;line-height:1;left:' + (r0.left + r0.width / 2 - 28) + 'px;top:' + (r0.top + r0.height / 2 - 28) + 'px';
+  document.body.appendChild(fly);
+  el('rocket').style.visibility = 'hidden';
+  var up = r0.top + 160;
+  var a = fly.animate([{ transform: 'translateY(0) rotate(0deg) scale(1)', opacity: 1 }, { transform: 'translateY(-40px) rotate(-45deg) scale(1.2)', opacity: 1, offset: 0.2 }, { transform: 'translateY(-' + up + 'px) rotate(-45deg) scale(1.9)', opacity: 0 }], { duration: 1700, easing: 'ease-in' });
+  setTimeout(function () { burst(45); }, 900);
+  a.onfinish = function () {
+    fly.remove(); el('rocket').style.visibility = 'visible';
+    b.disabled = false; b.textContent = 'Again 🔥';
+    el('rmsg').textContent = 'New year launched! 🌟';
+    el('n2').hidden = false; burst(35);
+  };
+}
+
+function pickPlace(btn) {
+  var all = el('places').children;
+  for (var i = 0; i < all.length; i++) all[i].classList.remove('on');
+  btn.classList.add('on');
+}
+function getPicks() {
+  var f = [], on = el('foods').querySelectorAll('.on');
+  for (var i = 0; i < on.length; i++) f.push(on[i].getAttribute('data-v'));
+  var p = el('places').querySelector('.on');
+  return { f: f, p: p ? p.getAttribute('data-v') : '', t: el('time').value };
+}
+function time12(t) {
+  var h = parseInt(t.split(':')[0], 10), m = t.split(':')[1];
+  return ((h % 12) || 12) + ':' + m + (h >= 12 ? ' PM' : ' AM');
+}
+function sendTreat() {
+  var c = getPicks(), m = el('tmsg');
+  if (!c.f.length) { m.textContent = 'Pick at least one food first 🍕'; return; }
+  if (!c.p) { m.textContent = 'Where are we going? 🍽️'; return; }
+  if (!c.t) { m.textContent = 'Need a time too 🕗'; return; }
+  sent = true;
+  el('no').hidden = true;
+  el('send').textContent = 'Request sent ✓';
+  m.textContent = c.f.join(', ') + ' at ' + c.p + ', ' + time12(c.t) + '. No backing out now, Talha! 🎉';
+  el('n3').hidden = false;
+  burst(45);
+}
+
+/* ----- No button: cursor aaye toh bhaag jata hai ----- */
+// pehle No Send ke bagal me baitha rehta hai, screen ke andar hi (card scroll ho toh saath chalta hai)
+var noMoved = false;
+function placeNo() {
+  var r = el('spot').getBoundingClientRect();
+  el('no').hidden = false;
+  moveNo(r.left, r.top);
+}
+function moveNo(x, y) {
+  var n = el('no'), w = n.offsetWidth, h = n.offsetHeight;
+  var maxX = window.innerWidth - w - 8, maxY = window.innerHeight - h - 80;
+  n.style.left = Math.max(8, Math.min(maxX, x)) + 'px';
+  n.style.top = Math.max(8, Math.min(maxY, y)) + 'px';
+}
+// koone me phans jaye toh kisi door wali jagah kood jata hai
+function jumpAway(cx, cy) {
+  noMoved = true;
+  var n = el('no'), best = 0, bx = 8, by = 8;
+  for (var i = 0; i < 8; i++) {
+    var x = 8 + Math.random() * (window.innerWidth - n.offsetWidth - 16);
+    var y = 8 + Math.random() * (window.innerHeight - n.offsetHeight - 90);
+    var d = Math.abs(x - cx) + Math.abs(y - cy);
+    if (d > best) { best = d; bx = x; by = y; }
+  }
+  moveNo(bx, by);
+}
+function flee(px, py) {
+  var n = el('no');
+  if (n.hidden) return;
+  var r = n.getBoundingClientRect();
+  var dx = r.left + r.width / 2 - px, dy = r.top + r.height / 2 - py;
+  var d = Math.sqrt(dx * dx + dy * dy);
+  if (d > 120) return;
+  noMoved = true;
+  if (d < 1) { dx = 1; dy = 0; d = 1; }
+  var nx = r.left + dx / d * 160, ny = r.top + dy / d * 160;
+  moveNo(nx, ny);
+  var r2 = n.getBoundingClientRect();
+  // agar jagah nahi mili (deewar ke paas), toh kood ja
+  if (Math.abs(r2.left - r.left) < 25 && Math.abs(r2.top - r.top) < 25) jumpAway(px, py);
+}
+document.addEventListener('mousemove', function (e) { flee(e.clientX, e.clientY); });
+document.addEventListener('touchstart', function (e) {
+  var t = e.touches[0];
+  if (!el('no').hidden) {
+    var r = el('no').getBoundingClientRect();
+    var near = t.clientX > r.left - 50 && t.clientX < r.right + 50 && t.clientY > r.top - 50 && t.clientY < r.bottom + 50;
+    if (near) jumpAway(t.clientX, t.clientY);
+  }
+}, { passive: true });
+window.onresize = function () { if (cur === 3 && !sent && !noMoved) placeNo(); };
+document.addEventListener('scroll', function () { if (cur === 3 && !sent && !noMoved) placeNo(); }, true);
+function noClicked() {
+  el('tmsg').textContent = 'Nice try! There is no "No" in a birthday treat 😈';
+  jumpAway(0, 0);
+}
+
+var lit = true;
+function blowCandles() {
+  lit = !lit;
+  el('cake').className = lit ? 'cake' : 'cake out';
+  el('blow').textContent = lit ? 'Blow 💨' : 'Light again 🕯️';
+  el('cmsg').textContent = lit ? 'Go on, make another wish!' : 'Wish made! 🤲 Hope it comes true.';
+  if (!lit) { burst(35); el('n4').hidden = false; }
+}
+
+// anchor ka href click se pehle set hota hai, isliye popup block nahi hota
+function sendWhatsapp(a) {
+  var c = getPicks();
+  var msg = 'Thank you for the birthday card, Muhammad Ahmad! ❤️';
+  if (c.f.length && c.p) msg += ' Treat plan: ' + c.f.join(', ') + ' at ' + c.p + (c.t ? ' around ' + time12(c.t) : '') + '. Don\'t be late 😄';
+  msg += ' - Talha';
+  a.href = 'https://wa.me/923290887127?text=' + encodeURIComponent(msg);
+}
+
+// music: Happy Birthday ki dhun, loop me
+var ac = null, playing = false, timer = null;
+var melody = [[392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],[392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],[392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,2],[698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]];
+function note(f, t, d) {
+  var o = ac.createOscillator(), g = ac.createGain();
+  o.type = 'triangle'; o.frequency.value = f;
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(0.06, t + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.001, t + d);
+  o.connect(g); g.connect(ac.destination);
+  o.start(t); o.stop(t + d + 0.05);
+}
+function playTune() {
+  if (!playing) return;
+  var t = ac.currentTime + 0.1, beat = 0.42;
+  for (var i = 0; i < melody.length; i++) { note(melody[i][0], t, melody[i][1] * beat * 0.95); t += melody[i][1] * beat; }
+  timer = setTimeout(playTune, (t - ac.currentTime + 1.2) * 1000);
+}
+function toggleMusic() {
+  try {
+    if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)();
+    playing = !playing;
+    if (playing) { ac.resume(); playTune(); } else { clearTimeout(timer); ac.suspend(); }
+    el('music').textContent = playing ? '🔊' : '🔇';
+  } catch (e) { el('music').textContent = '🔇'; }
+}
+</script>
+</body>
+</html>
